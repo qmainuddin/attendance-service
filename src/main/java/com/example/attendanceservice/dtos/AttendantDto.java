@@ -15,7 +15,7 @@ import java.util.Date;
 @Data
 public class AttendantDto implements Serializable {
     Long id;
-    Long version;
+//    Long version;
 //    Date createdDate;
 //    Date lastModifiedDate;
     @NotNull
