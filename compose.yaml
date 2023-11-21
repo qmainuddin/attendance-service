@@ -1,0 +1,40 @@
+services:
+  mysql-db:
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=attendanceservice'
+      - 'MYSQL_PASSWORD=password'
+      - 'MYSQL_ROOT_PASSWORD=password'
+      - 'MYSQL_USER=pratima'
+    ports:
+      - '3310:3306'
+    #    networks:
+    #      - alumni-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p password" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+#  alumni-auth:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    image: 'alumni-auth:latest'
+#    restart: always
+#    container_name: alumni-auth
+#    ports: [ 8080:8080 ]
+#    depends_on:
+#      - mysql-db
+#    networks:
+#      - alumni-network
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3308/auth-db
+#      - SPRING_DATASOURCE_USERNAME=root
+#      - SPRING_DATASOURCE_PASSWORD=1
+
+#added comment for testing
+
+#networks:
+#  alumni-network:
+#    driver: bridge
