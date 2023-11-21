@@ -16,11 +16,11 @@ import java.util.Date;
 public class AttendantDto implements Serializable {
     Long id;
     Long version;
-    Date createdDate;
-    Date lastModifiedDate;
+//    Date createdDate;
+//    Date lastModifiedDate;
     @NotNull
-    Long userDto_id;
+    Long user_id;
     boolean is_confirmed;
     @NotNull
-    Long eventDto_id;
+    Long event_id;
 }

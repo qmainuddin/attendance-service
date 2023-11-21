@@ -2,6 +2,8 @@ package com.example.attendanceservice.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,9 +18,11 @@ public class BaseEntity implements Comparable<BaseEntity>, Serializable {
     @Version
     private Long version;
 
+    @CreationTimestamp
     @Column(name = "created_date", nullable = false)
     private Date createdDate;
 
+    @UpdateTimestamp
     @Column(name = "last_modified_date", nullable = false)
     private Date lastModifiedDate;
 
